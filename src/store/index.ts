@@ -8,7 +8,17 @@ export default new Vuex.Store({
   state: {
     evaluations: Array<evaluationCriteria>(),
   },
-  mutations: {},
-  actions: {},
+  
+  mutations: {
+    addEvaluation(state, evaluationCriteria: evaluationCriteria) {
+      state.evaluations.push(evaluationCriteria);
+    }
+  },
+
+  actions: {
+    addEvaluation(context, evaluationCriteria: evaluationCriteria) {
+      context.commit('addEvalation', evaluationCriteria);
+    }
+  },
   modules: {}
 });
